@@ -58,8 +58,10 @@ html[data-theme="dark"] {
 
 .andes-prose {
   color: var(--andes-text-soft);
-  font-size: 15px;
-  line-height: 1.72;
+  /* Reading measurements are a host decision. A wiki derives them from its
+     accessibility budget; a standalone site takes the theme's defaults. */
+  font-size: var(--andes-prose-font-size, 15px);
+  line-height: var(--andes-prose-line-height, 1.72);
 }
 
 .andes-prose > :first-child {
@@ -106,7 +108,7 @@ html[data-theme="dark"] {
 .andes-prose blockquote,
 .andes-prose .table-wrap,
 .andes-prose .code-block {
-  margin: 0 0 17px;
+  margin: 0 0 var(--andes-prose-paragraph-space, 17px);
 }
 
 .andes-prose ul,
