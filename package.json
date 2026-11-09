@@ -22,5 +22,16 @@
     "type": "git",
     "url": "https://github.com/ajmwagar/andes.git"
   },
-  "homepage": "https://github.com/ajmwagar/andes"
+  "homepage": "https://github.com/ajmwagar/andes",
+  "peerDependenciesMeta": {
+    "highlight.js": {
+      "optional": true
+    },
+    "marked": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  }
 }
