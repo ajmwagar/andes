@@ -1,0 +1,23 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # The example is the contract: a consumer copies it. If it stops
+      # building, the theme is broken for every repository that adopted it.
+      - run: npm ci
+        working-directory: example
+      - run: npm run build
+        working-directory: example
+      - run: npm run build:internal
+        working-directory: example
