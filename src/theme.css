@@ -1,0 +1,227 @@
+/* andes — the documentation theme.
+ *
+ * This is the part every renderer shares: the token contract and the prose
+ * stylesheet. A host may supply its own values for any --andes-* token; the
+ * Vite runtime uses the defaults below, and the wiki maps them onto Coherence.
+ *
+ * Prose is namespaced `.andes-prose` so a host can adopt it without inheriting
+ * the docs shell's layout classes.
+ */
+
+:root {
+  color-scheme: light;
+  --andes-font-sans:
+    "Inter", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --andes-font-mono:
+    "SFMono-Regular", "JetBrains Mono", Consolas, "Liberation Mono", monospace;
+  --andes-bg: #ffffff;
+  --andes-bg-elevated: #ffffff;
+  --andes-bg-subtle: #f7f8f7;
+  --andes-bg-code: #f6f8f7;
+  --andes-text: #111413;
+  --andes-text-soft: #4b5150;
+  --andes-text-muted: #737b79;
+  --andes-border: #e4e8e6;
+  --andes-border-strong: #d2d8d5;
+  --andes-accent: #0d9373;
+  --andes-accent-hover: #08795f;
+  --andes-accent-soft: #e6f7f1;
+  --andes-accent-ink: #075e4b;
+  --andes-shadow: 0 12px 40px rgba(17, 20, 19, 0.08);
+  --andes-shadow-soft:
+    0 1px 2px rgba(17, 20, 19, 0.04), 0 8px 24px rgba(17, 20, 19, 0.04);
+  --andes-topbar-height: 64px;
+  --andes-sidebar-width: 264px;
+  --andes-toc-width: 220px;
+  --andes-content-width: 760px;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --andes-bg: #0d0f0e;
+  --andes-bg-elevated: #131615;
+  --andes-bg-subtle: #111413;
+  --andes-bg-code: #141817;
+  --andes-text: #eef2f0;
+  --andes-text-soft: #b9c2be;
+  --andes-text-muted: #8d9793;
+  --andes-border: #242a27;
+  --andes-border-strong: #323a36;
+  --andes-accent: #35c9a1;
+  --andes-accent-hover: #58dbb8;
+  --andes-accent-soft: #102b24;
+  --andes-accent-ink: #8ce9d0;
+  --andes-shadow: 0 16px 48px rgba(0, 0, 0, 0.45);
+  --andes-shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.andes-prose {
+  color: var(--andes-text-soft);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.andes-prose > :first-child {
+  margin-top: 0;
+}
+
+.andes-prose h1,
+.andes-prose h2,
+.andes-prose h3,
+.andes-prose h4 {
+  color: var(--andes-text);
+  font-weight: 680;
+  letter-spacing: -0.025em;
+  line-height: 1.22;
+  scroll-margin-top: calc(var(--andes-topbar-height) + 26px);
+}
+
+.andes-prose h1 {
+  margin: 0 0 18px;
+  font-size: clamp(34px, 5vw, 46px);
+  letter-spacing: -0.045em;
+  line-height: 1.04;
+}
+
+.andes-prose h2 {
+  margin: 46px 0 14px;
+  padding-top: 2px;
+  font-size: 24px;
+}
+
+.andes-prose h3 {
+  margin: 32px 0 10px;
+  font-size: 18px;
+}
+
+.andes-prose h4 {
+  margin: 26px 0 8px;
+  font-size: 15px;
+}
+
+.andes-prose p,
+.andes-prose ul,
+.andes-prose ol,
+.andes-prose blockquote,
+.andes-prose .table-wrap,
+.andes-prose .code-block {
+  margin: 0 0 17px;
+}
+
+.andes-prose ul,
+.andes-prose ol {
+  padding-left: 24px;
+}
+
+.andes-prose li + li {
+  margin-top: 5px;
+}
+
+.andes-prose strong {
+  color: var(--andes-text);
+  font-weight: 650;
+}
+
+.andes-prose a {
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--andes-accent) 32%, transparent);
+  text-underline-offset: 3px;
+}
+
+.andes-prose a:hover {
+  text-decoration-color: var(--andes-accent);
+}
+
+.andes-prose code {
+  padding: 0.16em 0.36em;
+  border: 1px solid var(--andes-border);
+  border-radius: 5px;
+  background: var(--andes-bg-code);
+  color: var(--andes-text);
+  font-family: var(--andes-font-mono);
+  font-size: 0.86em;
+}
+
+.andes-prose pre {
+  margin: 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+  background: var(--andes-bg-code);
+  color: var(--andes-text);
+  font-family: var(--andes-font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  tab-size: 2;
+}
+
+.andes-prose pre code {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: inherit;
+}
+
+.andes-prose blockquote {
+  padding: 12px 16px;
+  border-left: 3px solid var(--andes-accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--andes-accent-soft);
+  color: var(--andes-accent-ink);
+}
+
+.andes-prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.andes-prose hr {
+  height: 1px;
+  margin: 38px 0;
+  border: 0;
+  background: var(--andes-border);
+}
+
+.andes-prose img {
+  max-width: 100%;
+  border: 1px solid var(--andes-border);
+  border-radius: 9px;
+}
+
+.andes-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.andes-prose th,
+.andes-prose td {
+  padding: 10px 13px;
+  border-bottom: 1px solid var(--andes-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.andes-prose th {
+  background: var(--andes-bg-subtle);
+  color: var(--andes-text);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.andes-prose tr:last-child td {
+  border-bottom: 0;
+}
+
+.andes-prose th code,
+.andes-prose td code {
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .andes-prose {
+    font-size: 14.5px;
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Andes",
+  "description": "The FPL documentation theme.",
+  "navigation": [
+    {
+      "group": "Start here",
+      "audience": "public",
+      "pages": [
+        {
+          "title": "Introduction",
+          "slug": "introduction",
+          "file": "content/index.md",
+          "description": "What andes is and how a site is laid out."
+        },
+        {
+          "title": "Embed a demo",
+          "slug": "guides/embed-a-demo",
+          "file": "content/guides/embed-a-demo.md",
+          "description": "Put a live surface inside a documentation page."
+        }
+      ]
+    },
+    {
+      "group": "Internals",
+      "audience": "internal",
+      "pages": [
+        {
+          "title": "Theme tokens",
+          "slug": "theme-tokens",
+          "file": "content/theme-tokens.md",
+          "description": "The token contract every renderer shares."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "andes-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:internal": "DOCS_AUDIENCE=internal vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ajmwagar/andes": "file:..",
+    "highlight.js": "^11.11.1",
+    "marked": "^16.4.1"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  }
+}

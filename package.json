@@ -1,0 +1,26 @@
+{
+  "name": "@ajmwagar/andes",
+  "version": "0.1.0",
+  "description": "The FPL documentation theme: a Mintlify-style static docs site for Vite, plus the prose stylesheet other renderers share.",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.js",
+    "./style.css": "./src/style.css",
+    "./theme.css": "./src/theme.css",
+    "./vite": "./src/vite-plugin.js"
+  },
+  "files": [
+    "src"
+  ],
+  "peerDependencies": {
+    "highlight.js": "^11.11.1",
+    "marked": "^16.4.1",
+    "vite": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajmwagar/andes.git"
+  },
+  "homepage": "https://github.com/ajmwagar/andes"
+}
