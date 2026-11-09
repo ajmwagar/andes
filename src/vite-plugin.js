@@ -1,6 +1,9 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
+// Kept as `virtual:docs-kit` so the one existing consumer (the Transmog docs
+// site) migrates with a dependency swap rather than an edit to every entry
+// point. It is an internal module id, not a public interface.
 const virtualId = "virtual:docs-kit";
 const resolvedId = `\0${virtualId}`;
 
